@@ -1,8 +1,7 @@
 package com.demo.rest.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.rest.model.Person;
@@ -20,12 +19,12 @@ public class PersonController {
     		);
     
 
-    @RequestMapping(value = "/person/{name}", method = RequestMethod.GET)
+    @GetMapping(value = "/person/{name}")
     public Person personByName(@PathVariable String name) {
         return personMap.get(name);
     }
 
-    @RequestMapping(value = "/person", method = RequestMethod.GET)
+    @GetMapping(value = "/person")
     public List<Person> personList() {
         return new ArrayList<>(personMap.values());
     }

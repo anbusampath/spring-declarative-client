@@ -31,7 +31,7 @@ public class ClientApplication {
 	}
 
 	@Bean
-	public CommandLineRunner CommandLineRunnerBean() {
+	CommandLineRunner commandLineRunnerBean() {
 		return (args) -> {
 			System.out.println("By name " + personService().personByName("Anbu"));
 			System.out.println("By name " + personService().personByName("Sampath"));
